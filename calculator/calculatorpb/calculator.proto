@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "calculatorpb";
+
+message Input{
+    int64 number1 = 1;
+    int64 number2 = 2;
+}
+
+message SumRequest{
+    Input input = 1;
+}
+
+message SumResponse{
+    int64 result=1;
+}
+
+message GetFactorRequest {
+    int64 number = 1;
+}
+
+message GetFactorResponse {
+    int64 number = 1;
+}
+
+message AverageRequest {
+    int32 number = 1;
+}
+
+message AverageResponse {
+    double result = 1;
+}
+
+service CalculatorService {
+    rpc Sum(SumRequest) returns (SumResponse){};
+    rpc GetFactor(GetFactorRequest) returns (stream GetFactorResponse) {};
+    rpc Average(stream AverageRequest) returns (AverageResponse) {}; 
+}
