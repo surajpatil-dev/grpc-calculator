@@ -83,10 +83,10 @@ func main() {
 	cs := calculatorpb.NewCalculatorServiceClient(cc)
 
 	// unary
-	// doSum(cs)
+	doSum(cs)
 
 	// server streaming
-	// getFactors(cs)
+	getFactors(cs)
 
 	//client streaming
 	doAverage(cs)
