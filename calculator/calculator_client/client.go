@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/grpc-calculator/calculator/calculatorpb"
+	"github.com/surajpatil-dev/grpc-calculator/calculator/calculatorpb"
 
 	"google.golang.org/grpc"
 )
